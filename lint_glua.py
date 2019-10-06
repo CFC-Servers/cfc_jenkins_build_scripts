@@ -15,11 +15,8 @@ coloredlogs.install(level='DEBUG', logger=logger)
 results = []
 
 def lint_file(workpool, thread_num):
-    print("Starting Thread #{}".format(thread_num))
-
     while not workpool.empty():
         filename = workpool.get()
-        print("Thread #{}: Got some work!: {}".format(thread_num, filename))
 
         command = ["/usr/bin/luac", filename]
 
