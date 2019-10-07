@@ -27,6 +27,8 @@ def lint_file(workpool, thread_num):
 
         if stdout and len(stdout) > 0:
             for line in stdout.split("\n"):
+                line = "/lua/" + line.split("/lua/")[1]
+
                 results.append(line)
 
 workpool = queue.Queue()
