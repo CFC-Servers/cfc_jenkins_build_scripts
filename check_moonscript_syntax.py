@@ -18,7 +18,7 @@ def lint_file(workpool, thread_num):
     while not workpool.empty():
         filename = workpool.get()
 
-        command = ["/usr/bin/moonc", filename]
+        command = ["/usr/local/bin/moonc", filename]
 
         p = Popen(command, stdout=PIPE, stderr=PIPE)
         stdout, stderr = p.communicate()
