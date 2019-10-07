@@ -25,7 +25,7 @@ def lint_file(workpool, thread_num):
 
         stderr = stderr.decode("utf-8")
 
-        if stderr and stderr[:4] != "Built":
+        if stderr and stderr[:4].replace("\n", "") != "Built":
             results.append("\n" + stderr)
 
 workpool = queue.Queue()
