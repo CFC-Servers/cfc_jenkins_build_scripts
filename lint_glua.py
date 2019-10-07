@@ -23,10 +23,11 @@ def lint_file(workpool, thread_num):
         p = Popen(command, stdout=PIPE, stderr=PIPE)
         stdout, stderr = p.communicate()
 
-        stderr = stderr.decode("utf-8")
+        stdout = stdout.decode("utf-8")
 
-        if stderr and len(stderr) > 0:
-            results.append(stderr)
+        if stdout and len(stdout) > 0:
+            for line in stdout.split("\n"):
+                results.append(line)
 
 workpool = queue.Queue()
 
@@ -46,7 +47,7 @@ for thread in threads:
 
 if len(results) > 0:
     logger.error("GLua Style Violations have been detected")
-    [logger.error(err) for err in results]
+    [logger.error(err) for err in results if err and len(err) > 0]
     exit(1)
 
 logger.info("No GLua style violations were detected!")
