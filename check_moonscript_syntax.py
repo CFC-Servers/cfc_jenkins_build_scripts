@@ -10,7 +10,7 @@ from threading import Thread
 
 # logging setup
 logger = logging.getLogger(__name__)
-coloredlogs.install(level='DEBUG', logger=logger, isatty=True)
+coloredlogs.install(level='DEBUG', logger=logger, isatty=True, fmt='%(levelname)s %(message)s')
 
 results = []
 
