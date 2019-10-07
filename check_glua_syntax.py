@@ -49,3 +49,5 @@ if len(results) > 0:
     [logger.error(err) for err in results]
     exit(1)
 
+logger.info("No GLua syntax errors were detected!")
+
