@@ -13,6 +13,7 @@ coloredlogs.install(level='DEBUG', logger=logger, isatty=True, fmt='%(levelname)
 
 class SyntaxChecker:
     command = ""
+    file_pattern = ""
     def __init__(self, thread_count=5):
         self.thread_count = thread_count
         self.results = []
