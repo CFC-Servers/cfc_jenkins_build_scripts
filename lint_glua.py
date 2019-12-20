@@ -22,11 +22,8 @@ linter.lint_all_files()
 results = linter.results
 
 if len(results) > 0:
-    logger.error("GLua Style Violations have been detected")
-    [logger.error(err) for err in results if err and len(err) > 0]
+    linter.err("GLua Style Violations have been detected")
+    [linter.err(err) for err in results if err and len(err) > 0]
     exit(1)
 
-logger.info("No GLua style violations were detected!")
-
-
-
+linter.log("No GLua style violations were detected!")
