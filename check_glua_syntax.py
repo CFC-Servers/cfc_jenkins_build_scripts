@@ -1,7 +1,5 @@
 from syntax_checker import SyntaxChecker
 
-logger = logging.getLogger(__name__)
-
 class GluaSyntaxChecker(SyntaxChecker):
     command = "/usr/bin/luac"
     file_pattern = '**/*.lua'
@@ -18,8 +16,8 @@ linter.lint_all_files()
 results = linter.results
 
 if len(results) > 0:
-    logger.error("GLua syntax errors have been detected")
-    [logger.error(err) for err in results]
+    linter.err("GLua syntax errors have been detected")
+    [linter.err(err) for err in results]
     exit(1)
 
-logger.info("No GLua syntax errors were detected!")
+linter.log("No GLua syntax errors were detected!")

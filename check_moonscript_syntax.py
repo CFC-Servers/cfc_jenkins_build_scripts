@@ -1,3 +1,4 @@
+import logging
 from syntax_checker import SyntaxChecker
 
 logger = logging.getLogger(__name__)
@@ -18,11 +19,8 @@ linter.lint_all_files()
 results = linter.results
 
 if len(results) > 0:
-    logger.error("Moonscript syntax errors have been detected")
-    [logger.error(err) for err in results]
+    linter.err("Moonscript syntax errors have been detected")
+    [linter.err(err) for err in results]
     exit(1)
 
-logger.info("No Moonscript syntax errors were detected!")
-
-
-
+linter.log("No Moonscript syntax errors were detected!")

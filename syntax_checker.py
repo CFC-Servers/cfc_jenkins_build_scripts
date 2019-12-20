@@ -49,4 +49,8 @@ class SyntaxChecker:
         for thread in threads:
             thread.join()
 
-        
+    def log(self, message):
+        logger.info(message)
+
+    def err(self, message):
+        logger.error(message)
