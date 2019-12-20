@@ -1,5 +1,7 @@
 from syntax_checker import SyntaxChecker
 
+logger = logging.getLogger(__name__)
+
 class GluaSyntaxChecker(SyntaxChecker):
     command = "/usr/bin/luac"
     file_pattern = '**/*.lua'
@@ -21,6 +23,3 @@ if len(results) > 0:
     exit(1)
 
 logger.info("No GLua syntax errors were detected!")
-
-
-
