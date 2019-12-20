@@ -1,7 +1,4 @@
-import logging
 from syntax_checker import SyntaxChecker
-
-logger = logging.getLogger(__name__)
 
 class MoonScriptLinter(SyntaxChecker):
     command = "/usr/local/bin/moonc"
