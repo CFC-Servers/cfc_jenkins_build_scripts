@@ -1,1 +1,1 @@
-git -c core.fileMode=false --git-dir=${1}/.git pull origin master
+cd $1 && git fetch && git merge --ff-only origin/master
