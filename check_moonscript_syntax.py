@@ -1,7 +1,7 @@
 from syntax_checker import SyntaxChecker
 
-class MoonScriptLinter(SyntaxChecker):
-    command = ["/usr/local/bin/moonc", "-l"]
+class MoonScriptSyntaxChecker(SyntaxChecker):
+    command = ["/usr/local/bin/moonc"]
     file_pattern = '**/*.moon'
 
     def get_results(self, stdout, stderr):
@@ -11,7 +11,7 @@ class MoonScriptLinter(SyntaxChecker):
             yield "\n" + stderr
 
 
-linter = MoonScriptLinter(thread_count=5)
+linter = MoonScriptSyntaxChecker(thread_count=5)
 linter.lint_all_files()
 results = linter.results
 

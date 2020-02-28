@@ -24,6 +24,7 @@ class SyntaxChecker:
             filename = self.workpool.get()
 
             command = self.command + [filename]
+            print(command)
 
             p = Popen(command, stdout=PIPE, stderr=PIPE)
             stdout, stderr = p.communicate()
