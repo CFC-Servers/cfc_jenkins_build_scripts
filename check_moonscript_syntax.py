@@ -1,7 +1,7 @@
 from syntax_checker import SyntaxChecker
 
 class MoonScriptLinter(SyntaxChecker):
-    command = "/usr/local/bin/moonc"
+    command = ["/usr/local/bin/moonc", "-l"]
     file_pattern = '**/*.moon'
 
     def get_results(self, stdout, stderr):

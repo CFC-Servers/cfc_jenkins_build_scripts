@@ -12,7 +12,7 @@ coloredlogs.install(level='DEBUG', logger=logger, isatty=True, fmt='%(levelname)
 
 
 class SyntaxChecker:
-    command = ""
+    command = []
     file_pattern = ""
     def __init__(self, thread_count=5):
         self.thread_count = thread_count
@@ -23,7 +23,7 @@ class SyntaxChecker:
         while not self.workpool.empty():
             filename = self.workpool.get()
 
-            command = [self.command, filename]
+            command = self.command + [filename]
 
             p = Popen(command, stdout=PIPE, stderr=PIPE)
             stdout, stderr = p.communicate()
