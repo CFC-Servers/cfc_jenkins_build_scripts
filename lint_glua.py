@@ -1,7 +1,7 @@
 from syntax_checker import SyntaxChecker
 
 class GluaLinter(SyntaxChecker):
-    command = "/var/lib/jenkins/build_scripts/glualint"
+    command = ["/var/lib/jenkins/build_scripts/glualint"]
     file_pattern = '**/*.lua'
 
     def get_results(self, stdout, stderr):

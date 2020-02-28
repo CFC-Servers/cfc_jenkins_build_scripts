@@ -1,7 +1,7 @@
 from syntax_checker import SyntaxChecker
 
 class GluaSyntaxChecker(SyntaxChecker):
-    command = "/usr/bin/luac"
+    command = ["/usr/bin/luac"]
     file_pattern = '**/*.lua'
 
     def get_results(self, stdout, stderr):
