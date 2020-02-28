@@ -1,0 +1,3 @@
+[submodule "moonscript_lint_config"]
+	path = moonscript_lint_config
+	url = git@github.com:CFC-Servers/cfc_moonc_lint_config.git
